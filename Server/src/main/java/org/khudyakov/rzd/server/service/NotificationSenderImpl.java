@@ -1,22 +1,16 @@
 package org.khudyakov.rzd.server.service;
 
-import com.google.firebase.messaging.AndroidConfig;
-import com.google.firebase.messaging.ApnsConfig;
-import com.google.firebase.messaging.Aps;
-import com.google.firebase.messaging.FcmOptions;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingException;
 import com.google.firebase.messaging.Message;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class NotificationSenderImpl implements NotificationSender {
+    @Autowired
     private FirebaseMessaging firebaseMessaging;
-
-    public NotificationSenderImpl() {
-        firebaseMessaging = FirebaseMessaging.getInstance();
-    }
 
     @Override
     public void sendMessage(String token, String text) {
