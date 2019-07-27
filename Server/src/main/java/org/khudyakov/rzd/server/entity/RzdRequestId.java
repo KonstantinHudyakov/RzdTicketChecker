@@ -1,10 +1,11 @@
 package org.khudyakov.rzd.server.entity;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RzdRequestId {
     private String result;
-    @JsonAlias({"RID"})
+    @JsonProperty("RID")
     private String rid;
     private String timestamp;
 
