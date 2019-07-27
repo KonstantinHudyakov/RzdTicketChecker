@@ -1,55 +1,42 @@
 package org.khudyakov.rzd.server.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RzdTrain {
     private String number;
+
     private boolean elReg;
+
     @JsonProperty("station0")
     private String departurePlace;
+
     @JsonProperty("station1")
     private String arrivalPlace;
+
     @JsonProperty("routeCode0")
     private String departureCode;
+
     @JsonProperty("routeCode1")
     private String arrivalCode;
 
     @JsonProperty("date0")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
-    @JsonDeserialize(using = LocalDateDeserializer.class)
-    @JsonSerialize(using = LocalDateSerializer.class)
-    private LocalDate date;
+    private String date;
 
     @JsonProperty("time0")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
-    @JsonDeserialize(using = LocalTimeDeserializer.class)
-    @JsonSerialize(using = LocalTimeSerializer.class)
-    private LocalTime departureTime;
+    private String departureTime;
 
     @JsonProperty("time1")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
-    @JsonDeserialize(using = LocalTimeDeserializer.class)
-    @JsonSerialize(using = LocalTimeSerializer.class)
-    private LocalTime arrivalTime;
+    private String arrivalTime;
 
     private String timeInWay;
 
     public RzdTrain() {
     }
 
-    public RzdTrain(String number, boolean elReg, String departurePlace, String arrivalPlace, String departureCode, String arrivalCode, LocalDate date, LocalTime departureTime, LocalTime arrivalTime, String timeInWay) {
+    public RzdTrain(String number, boolean elReg, String departurePlace, String arrivalPlace, String departureCode, String arrivalCode, String date, String departureTime, String arrivalTime, String timeInWay) {
         this.number = number;
         this.elReg = elReg;
         this.departurePlace = departurePlace;
@@ -110,27 +97,27 @@ public class RzdTrain {
         this.arrivalCode = arrivalCode;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public LocalTime getDepartureTime() {
+    public String getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(LocalTime departureTime) {
+    public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
 
-    public LocalTime getArrivalTime() {
+    public String getArrivalTime() {
         return arrivalTime;
     }
 
-    public void setArrivalTime(LocalTime arrivalTime) {
+    public void setArrivalTime(String arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 

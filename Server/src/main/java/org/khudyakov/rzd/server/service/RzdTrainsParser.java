@@ -6,5 +6,5 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 public interface RzdTrainsParser {
-    public RzdTrainsInfo getTrainsInfo(String url);
+    RzdTrainsInfo getTrainsInfo(String url);
 }

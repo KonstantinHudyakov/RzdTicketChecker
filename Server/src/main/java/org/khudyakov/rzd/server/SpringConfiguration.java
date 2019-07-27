@@ -33,7 +33,10 @@ public class SpringConfiguration {
         RestTemplate restTemplate = new RestTemplate();
         MappingJackson2HttpMessageConverter jacksonConverter =
                 new MappingJackson2HttpMessageConverter(new ObjectMapper());
-        jacksonConverter.setSupportedMediaTypes(Collections.singletonList(new MediaType("text", "javascript", Charset.forName("UTF-8"))));
+        List<MediaType> mediaTypes = new ArrayList<>();
+        mediaTypes.add(new MediaType("text", "javascript", Charset.forName("UTF-8")));
+        mediaTypes.add(new MediaType("text", "html", Charset.forName("UTF-8")));
+        jacksonConverter.setSupportedMediaTypes(mediaTypes);
 
         List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
         messageConverters.add(new StringHttpMessageConverter());

@@ -15,7 +15,7 @@ import java.io.IOException;
 public class RzdTrainsParserTest {
     private static final ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
     private static RzdTrainsParser ticketChecker;
-    private static final String URL = "https://pass.rzd.ru/timetable/public/ru?layer_id=5827&dir=0&tfl=3&checkSeats=1&code0=2060340&dt0=02.08.2019&code1=2000001&dt1=02.08.2019";
+    private static final String URL = "https://pass.rzd.ru/timetable/public/ru?layer_id=5827&dir=0&tfl=3&checkSeats=1&code0=2000001&dt0=02.08.2019&code1=2060340&dt1=02.08.2019";
 
     @BeforeClass
     public static void setupClass() {
